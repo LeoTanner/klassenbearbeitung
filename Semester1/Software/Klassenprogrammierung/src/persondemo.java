@@ -24,8 +24,6 @@ public class persondemo
         persme.personenausgabe();
 
 
-
-
     }
     public static void ausgabeperson (person p)
     {
