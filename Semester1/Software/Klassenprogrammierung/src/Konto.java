@@ -4,6 +4,8 @@ public class Konto
 {
     private String Kontoinhaber;
     private double Kontostand;
+    public static int anzahlKonto = 10; //1-99999;
+    private int idnumber = 1;
 
     private Scanner scn = new Scanner(System.in);
 
@@ -11,6 +13,7 @@ public class Konto
     {
         //Konstruktor
         this.Kontoinhaber = Kontoinhaber;
+        this.idnumber = anzahlKonto++;
         Kontostand = 0;
     }
 
@@ -22,7 +25,7 @@ public class Konto
 
     public void outputKonto()
     {
-        System.out.println(this.Kontoinhaber + "---" +Kontostand + " €");
+        System.out.println(this.Kontoinhaber + "---" +idnumber+"---" +Kontostand + " €");
     }
 
 

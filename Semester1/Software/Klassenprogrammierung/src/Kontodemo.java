@@ -7,22 +7,29 @@ public class Kontodemo
         Konto Nachbar = new Konto("Patrick Putzi");
         Konto newKonto = new Konto("Random rando");
 
+
         Scanner scn = new Scanner(System.in);
 
         System.out.print("Geben sie ihren Namen ein:");
         String kontonamen = scn.nextLine();
 
+
+        kon1.initialize("Leo Tanner", 400);
+        Nachbar.initialize("Patrick Putzi", 3);
         newKonto.setKontoinhaber(kontonamen);
+
+        kon1.outputKonto();
+        newKonto.outputKonto();
+        Nachbar.outputKonto();
+        /*
         newKonto.aufbuchen();
         newKonto.abbuchen();
 
 
         newKonto.aufbuchen(200);
         newKonto.abbuchen(300);
-        newKonto.outputKonto();
+        newKonto.outputKonto();*/
 
-        kon1.initialize("Leo Tanner", 400);
-        Nachbar.initialize("Patrick Putzi", 3);
 
         /*kon1.outputKonto();
         kon1.aufbuchen(50);
