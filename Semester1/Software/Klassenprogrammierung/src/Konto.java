@@ -7,6 +7,13 @@ public class Konto
 
     private Scanner scn = new Scanner(System.in);
 
+    public Konto(String kontoinhaber)
+    {
+        //Konstruktor
+        this.Kontoinhaber = Kontoinhaber;
+        Kontostand = 0;
+    }
+
     public void initialize (String Kontoinhaber, double Kontostand)
     {
         this.Kontoinhaber = Kontoinhaber;
@@ -17,6 +24,7 @@ public class Konto
     {
         System.out.println(this.Kontoinhaber + "---" +Kontostand + " €");
     }
+
 
     public void aufbuchen ()
     {
