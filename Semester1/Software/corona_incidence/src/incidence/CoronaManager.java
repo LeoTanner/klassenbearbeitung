@@ -1,6 +1,7 @@
 package incidence;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CoronaManager
 {
@@ -29,5 +30,30 @@ public class CoronaManager
             Coronaincidence = Coronaincidence + onevalue.getNumber();
         }
         System.out.println("Bisher in Österreich: "+Coronaincidence+ " Fälle");
+
+        //Anzahl der Fälle je Bundesland
+        HashMap<String, Integer> totalIncidencesState = new HashMap<>();
+
+        for (Corona recordedValue : incidence) {
+            /*
+            1. ist mein Key bereits in der Liste
+                2. wenn nein, dann muss ich den key aufnehmen
+                3. wenn ja, dann muss ich den Wert auslesen, summieren und neu ablegen
+             */
+
+            if(totalIncidencesState.containsKey(recordedValue.getState()))
+            {
+                //ja, Fall 3
+                int currentValue = totalIncidencesState.get(recordedValue.getState());
+                currentValue += recordedValue.getNumber();
+                totalIncidencesState.put(recordedValue.getState(), currentValue);
+            }
+            else
+            {
+                //nein, Fall 2
+                totalIncidencesState.put(recordedValue.getState(),recordedValue.getNumber());
+            }
+        }
+        System.out.println("totalIncidenceState = "+totalIncidencesState);
     }
 }
