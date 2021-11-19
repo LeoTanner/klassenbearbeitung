@@ -7,6 +7,5 @@ public class DemoAnimal
         an1.ageCategory();
         an1.giveAnimalLoud();
         an1.getNameAndAge();
-
     }
 }
