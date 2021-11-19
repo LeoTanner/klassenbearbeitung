@@ -16,7 +16,6 @@ class TestAnimalTest {
    void setUp() {
       a = 1;
       b = false;
-
    }
 
    @Test
